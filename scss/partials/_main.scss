@@ -23,21 +23,35 @@ main {
     width: 100%;
     height: 100vh;
     position: relative;
+    @media screen and (max-width:375px) {
+        background-position: bottom;
+        background-color: $veryDarkBlue;
+        background-image: url(../../images/bg-mobile.png);
+        background-repeat: no-repeat;
+    }
 }
-
 .container {
     position: absolute;
-    top: 20%;
+    width: 75%;
+    top: 19%;
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    gap: 20px;
+    @media screen and (max-width:375px) {
+        display:flex;
+        flex-direction: column;
+    }
 }
 .item1 {
     flex-grow: 1;
     background: $darkBlue;
     border-radius: 10px 100px 10px 10px;
+    @media screen and (max-width:375px) {
+        width: 100%;
+    }
     .cont-item1 {
-        padding: 20px;
+        padding: 30px;
         flex-direction: column;
         justify-content: space-around;
         align-items: flex-start;
@@ -46,8 +60,7 @@ main {
         width: 180px;
         height: auto;
         display: flex;
-
-        margin-top: 10px;
+        margin: 20px 0 0 0;
         justify-content: space-between;
         .img-ico {
             background-color: $veryDarkBlue;
@@ -58,7 +71,7 @@ main {
 }
 .item2 {
     display: flex;
-    flex-grow: 2;
+    flex-grow: 4;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -66,53 +79,97 @@ main {
     height: auto;
     background: $darkBlue;
     border-radius: 15px;
-    .cont-item2 {
-        padding: 20px 30px 20px 30px;
-    }
-    .txt-item2 {
-        font-size: $fontSizeBody;
-        color: $grayishBlue;
-        span {
-            color: $paleBlue;
-        }
-    }
-    .progress-bar {
+    @media screen and (max-width:375px) {
         width: 100%;
-        padding: 10px 0 10px 0;
-        .progress {
-            height: 17px;
-            border-radius: 15px;
-            position: relative;
-            background-color: $veryDarkBlue;
-            .bar {
-                background: $gradientColor;
-                width: calc(70%);
-                height: 10px;
-                left: 6px;
-                top: 4.1px;
-                position: absolute;
-                border-radius: 10px;
+    }
+    .cont-item2 {
+        width: 100%;
+        padding: 30px 35px 30px 35px;
+        position: relative;
+        .txt-item2 {
+            font-size: $fontSizeBody;
+            color: $grayishBlue;
+            span {
+                color: $paleBlue;
             }
-            .point-bar {
+        }
+        .progress-bar {
+            width: 100%;
+            padding: 15px 0 5px 0;
+            .progress {
+                height: 17px;
+                border-radius: 15px;
+                position: relative;
+                background-color: $veryDarkBlue;
+                .bar {
+                    background: $gradientColor;
+                    width: calc(70%);
+                    height: 11.3px;
+                    left: 2px;
+                    top: 3.2px;
+                    position: absolute;
+                    border-radius: 10px;
+                }
+                .point-bar {
+                    position: absolute;
+                    left: calc(70% - 8px);
+                    top: 4.5px;
+                    width: 8.2px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background-color: white;
+                }
+            }
+        }
+        .progress-memory {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            .memory {
+               color: $paleBlue;
+               font-size: 12px;
+               font-weight: $fonWeightTitle;
+            }
+        }
+        .popup {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 150px;
+            height: 60px;
+            background-color: $paleBlue;
+            border-radius: 10px;
+            top: -40px;
+            right: 29px;
+            font-size: 14px;
+            color: $grayishBlue;
+            span {
+                font-size: 24px;
+                font-weight: bold;
+                margin-right: 3px;
+                color: black;
+            }
+            &::after {
+                content: "";
                 position: absolute;
-                left: calc(70% - 5px);
-                top: 5px;
-                width: 8px;
-                height: 8px;
-                border-radius: 50%;
-                background-color: white;
+                border-top: 20px solid transparent;
+                border-bottom: 20px solid transparent;
+                border-left: 20px solid $paleBlue;
+                border-right: 20px solid transparent;
+                bottom: -8px;
+                right: -20px;
+                transform: rotate(-45deg);
+                @media screen and (max-width: 375px) {
+                    display: none;
+                }
+            }
+            @media screen and (max-width: 375px) {
+                left: 22%;
+                top: 120px;
             }
         }
     }
 }
-.progress-memory {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    .memory {
-       color: $paleBlue;
-       font-size: 14;
-       font-weight: $fonWeightTitle;
-    }
-} 
+
 
