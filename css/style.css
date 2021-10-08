@@ -5,27 +5,20 @@
 }
 
 body {
-  max-width: 1440px;
-  min-width: 375px;
+  display: flex;
+  justify-content: center;
   font-family: "Raleway", sans-serif;
   width: 100%;
   height: 100vh;
-}
-
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-position: bottom;
-  background-color: #0c122c;
   background-image: url(../../images/bg-desktop.png);
+  background-color: #0c122c;
+  background-size: 100% 50%;
+  background-position: center bottom;
   background-repeat: no-repeat;
-  width: 100%;
-  height: 100vh;
-  position: relative;
+  background-repeat: no-repeat;
 }
 @media screen and (max-width: 375px) {
-  main {
+  body {
     background-position: bottom;
     background-color: #0c122c;
     background-image: url(../../images/bg-mobile.png);
@@ -33,10 +26,21 @@ main {
   }
 }
 
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: bottom;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
 .container {
   position: absolute;
-  width: 75%;
-  top: 19%;
+  max-width: 955px;
+  width: 90%;
+  top: 24%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -189,6 +193,10 @@ main {
 
 /*Footer*/
 footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   color: white;
   background-color: #1d2c67;
 }
