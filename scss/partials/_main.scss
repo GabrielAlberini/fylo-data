@@ -5,176 +5,196 @@
 }
 
 body {
+    width: 100%;
+    height: 100vh;
     display: flex;
     justify-content: center;
     font-family: $fontRaleway;
-    width: 100%;
-    height: 100vh;
-    background-image: url(../../images/bg-desktop.png);
     background-color: $veryDarkBlue;
+    background-image: url(../../images/bg-desktop.png);
     background-size: 100% 50%;
     background-position: center bottom;
-    background-repeat: no-repeat;
-
     background-repeat: no-repeat;
     @media screen and (max-width:375px) {
         background-position: bottom;
         background-color: $veryDarkBlue;
         background-image: url(../../images/bg-mobile.png);
         background-repeat: no-repeat;
-
+        background-size: contain;
     }
-}
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-position: bottom;
-    width: 100%;
-    height: 100vh;
-    position: relative;
-}
-.container {
-    position: absolute;
-    max-width: 955px;
-    width: 90%;
-    top: 24%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    gap: 20px;
-    @media screen and (max-width:375px) {
-        display:flex;
-        flex-direction: column;
-    }
-}
-.item1 {
-    flex-grow: 1;
-    background: $darkBlue;
-    border-radius: 10px 100px 10px 10px;
-    @media screen and (max-width:375px) {
+    main {
         width: 100%;
-    }
-    .cont-item1 {
-        padding: 30px;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: flex-start;
-    }
-    .cont-img-item1 {
-        width: 180px;
-        height: auto;
+        height: 100vh;
         display: flex;
-        margin: 20px 0 0 0;
-        justify-content: space-between;
-        .img-ico {
-            background-color: $veryDarkBlue;
-            padding: 15px;
-            border-radius: 10px;
-        }
-    }
-}
-.item2 {
-    display: flex;
-    flex-grow: 4;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    width: 250px;
-    height: auto;
-    background: $darkBlue;
-    border-radius: 15px;
-    @media screen and (max-width:375px) {
-        width: 100%;
-    }
-    .cont-item2 {
-        width: 100%;
-        padding: 30px 35px 30px 35px;
+        justify-content: center;
+        align-items: center;
         position: relative;
-        .txt-item2 {
-            font-size: $fontSizeBody;
-            color: $grayishBlue;
-            span {
-                color: $paleBlue;
-            }
-        }
-        .progress-bar {
-            width: 100%;
-            padding: 15px 0 5px 0;
-            .progress {
-                height: 17px;
-                border-radius: 15px;
-                position: relative;
-                background-color: $veryDarkBlue;
-                .bar {
-                    background: $gradientColor;
-                    width: calc(70%);
-                    height: 11.3px;
-                    left: 2px;
-                    top: 3.2px;
-                    position: absolute;
-                    border-radius: 10px;
-                }
-                .point-bar {
-                    position: absolute;
-                    left: calc(70% - 8px);
-                    top: 4.5px;
-                    width: 8.2px;
-                    height: 8px;
-                    border-radius: 50%;
-                    background-color: white;
-                }
-            }
-        }
-        .progress-memory {
-            display: flex;
-            width: 100%;
-            justify-content: space-between;
-            .memory {
-               color: $paleBlue;
-               font-size: 12px;
-               font-weight: $fonWeightTitle;
-            }
-        }
-        .popup {
+        .container {
+            max-width: 955px;
+            width: 90%;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-end;
+            gap: 20px;
             position: absolute;
-            width: 150px;
-            height: 60px;
-            background-color: $paleBlue;
-            border-radius: 10px;
-            top: -40px;
-            right: 29px;
-            font-size: 14px;
-            color: $grayishBlue;
-            span {
-                font-size: 24px;
-                font-weight: bold;
-                margin-right: 3px;
-                color: black;
+            top: 34%;
+            @media screen and (max-width:375px) {
+                display:flex;
+                flex-direction: column;
+                top: 25%;
             }
-            &::after {
-                content: "";
-                position: absolute;
-                border-top: 20px solid transparent;
-                border-bottom: 20px solid transparent;
-                border-left: 20px solid $paleBlue;
-                border-right: 20px solid transparent;
-                bottom: -8px;
-                right: -20px;
-                transform: rotate(-45deg);
-                @media screen and (max-width: 375px) {
-                    display: none;
+            .item1 {
+                flex-grow: 1;
+                background: $darkBlue;
+                border-radius: 10px 100px 10px 10px;
+                @media screen and (max-width:375px) {
+                    width: 100%;
+                }
+                .cont-item1 {
+                    flex-direction: column;
+                    justify-content: space-around;
+                    align-items: flex-start;
+                    padding: 30px;
+                }
+                .cont-img-item1 {
+                    width: 180px;
+                    height: auto;
+                    display: flex;
+                    margin-top: 20px;
+                    justify-content: space-between;
+                    .img-ico {
+                        background-color: $veryDarkBlue;
+                        padding: 15px;
+                        border-radius: 10px;
+                        transition:all .3s ease;
+                        &:hover {
+                            transform: translateY(-3px);
+                        }
+                    }
                 }
             }
-            @media screen and (max-width: 375px) {
-                left: 22%;
-                top: 120px;
+            .item2 {
+                flex-grow: 4;
+                width: 250px;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                background: $darkBlue;
+                border-radius: 10px;
+                @media screen and (max-width:375px) {
+                    width: 100%;
+                }
+                .cont-item2 {
+                    width: 100%;
+                    padding: 30px 35px 30px 35px;
+                    position: relative;
+                    .txt-item2 {
+                        font-size: $fontSizeBody;
+                        color: $grayishBlue;
+                        span {
+                            color: $paleBlue;
+                        }
+                    }
+                    .progress-bar {
+                        width: 100%;
+                        padding: 15px 0 5px 0;
+                        .progress {
+                            height: 17px;
+                            border-radius: 15px;
+                            position: relative;
+                            background-color: $veryDarkBlue;
+                            .bar {
+                                width: calc(70%);
+                                height: 11.3px;
+                                background: $gradientColor;
+                                border-radius: 10px;
+                                position: absolute;
+                                top: 3.2px;
+                                left: 2px;
+                            }
+                            .point-bar {
+                                width: 8.2px;
+                                height: 8px;
+                                border-radius: 50%;
+                                background-color: white;
+                                position: absolute;
+                                top: 4.5px;
+                                left: calc(70% - 8px);
+                            }
+                        }
+                    }
+                    .progress-memory {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        .memory {
+                            font-size: 12px;
+                            font-weight: $fonWeightTitle;
+                            color: $paleBlue;
+                        }
+                    }
+                    .popup {
+                        width: 150px;
+                        height: 60px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 10px;
+                        color: $grayishBlue;
+                        background-color: white;
+                        border-radius: 10px;
+                        position: absolute;
+                        top: -40px;
+                        right: 35px;
+                        span {
+                            font-size: 35px;
+                            font-weight: bold;
+                            margin-right: 3px;
+                            color: black;
+                        }
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            border-top: 20px solid transparent;
+                            border-bottom: 20px solid transparent;
+                            border-left: 20px solid white;
+                            border-right: 20px solid transparent;
+                            bottom: -8px;
+                            right: -20px;
+                            transform: rotate(-45deg);
+                            @media screen and (max-width: 375px) {
+                                display: none;
+                            }
+                        }
+                        @media screen and (max-width: 375px) {
+                            left: 27%;
+                            top: 100px;
+                        }
+                    }
+                }
             }
         }
     }
+    /*Footer*/
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    padding: 5px;
+    .attribution {
+        font-size: 11px; text-align: center;
+    }
+    .attribution a {
+        color: white;
+    }
 }
+}
+
+
+
 
 
