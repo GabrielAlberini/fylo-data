@@ -2,30 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
   <title>Frontend Mentor | Fylo data storage component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
-
-  You’ve used 815 GB of your storage
-
-  185 GB Left
-  
-  0 GB
-  1000 GB
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <main>
+    <div class="container">
+      <div class="item1">
+          <div class="cont-item1">
+            <h1 class="title"><img src="images/logo.svg" alt=""></h1>
+            <div class="cont-img-item1">
+              <img class="img-ico" src="images/icon-document.svg" alt="icono de la imagen">
+              <img class="img-ico" src="images/icon-folder.svg" alt="icono de la imagen">
+              <img class="img-ico" src="images/icon-upload.svg" alt="icono de la imagen">
+            </div>
+          </div>
+      </div>
+      <div class="item2">
+        <div class="cont-item2">
+          <h2 class="txt-item2">You've used <span>815 GB</span> of your storage</h2>
+          <div class="progress-bar">
+            <div class="progress">
+                <div class="bar"></div>
+                <div class="point-bar"></div>
+            </div>
+          </div>
+          <div class="progress-memory">
+            <div class="memory">0 GB</div>
+            <div class="memory">1000 GB</div>
+          </div>
+        </div>
+      </div>
+    </div>    
+  </main>
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://www.linkedin.com/in/gabriel-alberini/" target="_blank">Gabriel Alberini</a>.
+    </div>
+  </footer>  
 </body>
 </html>
